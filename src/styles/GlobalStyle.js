@@ -1,5 +1,5 @@
 import { createGlobalStyle } from "styled-components";
-import GmarketSansWOFFMedium from "../assets/GmarketSansMedium.woff";
+import GmarketSansWOFFMedium from "../assets/fonts/GmarketSansMedium.woff";
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -10,13 +10,15 @@ const GlobalStyle = createGlobalStyle`
     src: url(${GmarketSansWOFFMedium}) format('truetype');
   }
   * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
   body {
-    height: 100%;
-    background-color: #fbfbfb;
+    height: 100vh;
+    background-color: #EEE;
     font-family: GmarketSansWOFFMedium, sans-serif;
-    color: #000;
+    color: #053B50;
   }
   a {
     color: inherit;
