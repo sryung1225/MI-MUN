@@ -11,13 +11,13 @@ function FooterTab() {
   return (
     <Footer>
       <Tab to="/">
-        <i className="cloud"></i>모든 지역
+        <CloudIcon></CloudIcon>모든 지역
       </Tab>
       <Tab to="/my">
-        <i className="home"></i>내 지역
+        <HomeIcon></HomeIcon>내 지역
       </Tab>
       <Tab to="/favorite">
-        <i className="star"></i>즐겨찾기
+        <StarIcon></StarIcon>즐겨찾기
       </Tab>
     </Footer>
   );
@@ -31,6 +31,29 @@ const Footer = styled.footer`
   height: 80px;
   background-color: #fff;
   box-shadow: 0 12px 20px #888;
+`;
+
+const Icon = styled.i`
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 3px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all ease-in 0.5s;
+`;
+
+const CloudIcon = styled(Icon)`
+  background-image: url(${CloudPath});
+`;
+
+const HomeIcon = styled(Icon)`
+  background-image: url(${HomePath});
+`;
+
+const StarIcon = styled(Icon)`
+  background-image: url(${StarPath});
 `;
 
 const Tab = styled(NavLink)`
@@ -51,37 +74,18 @@ const Tab = styled(NavLink)`
     background-color: transparent;
     content: "";
   }
-  i {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-bottom: 3px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    transition: all ease-in 0.5s;
-    &.cloud {
-      background-image: url(${CloudPath});
-    }
-    &.home {
-      background-image: url(${HomePath});
-    }
-    &.star {
-      background-image: url(${StarPath});
-    }
-  }
   &.active {
     color: #64ccc5;
     &::after {
       background-color: #64ccc5;
     }
-    i.cloud {
+    ${CloudIcon} {
       background-image: url(${ActiveCloudPath});
     }
-    i.home {
+    ${HomeIcon} {
       background-image: url(${ActiveHomePath});
     }
-    i.star {
+    ${StarIcon} {
       background-image: url(${ActiveStarPath});
     }
   }
