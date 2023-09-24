@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import CloudPath from "../assets/images/i_cloud_b.png";
 import HomePath from "../assets/images/i_home_b.png";
@@ -33,7 +33,7 @@ const Footer = styled.footer`
   box-shadow: 0 12px 20px #888;
 `;
 
-const Tab = styled(Link)`
+const Tab = styled(NavLink)`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -70,7 +70,7 @@ const Tab = styled(Link)`
       background-image: url(${StarPath});
     }
   }
-  &:focus {
+  &.active {
     color: #64ccc5;
     &::after {
       background-color: #64ccc5;
