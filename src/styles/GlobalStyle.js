@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
+    position: relative;
     height: 100vh;
     background-color: #EEE;
     font-family: GmarketSansWOFFMedium, sans-serif;
