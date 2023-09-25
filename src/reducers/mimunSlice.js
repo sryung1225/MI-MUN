@@ -19,7 +19,7 @@ const mimunSlice = createSlice({
       })
       .addCase(fetchMimun.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.data = [action.payload[0]];
+        state.data = action.payload;
       })
       .addCase(fetchMimun.rejected, (state, action) => {
         state.isLoading = false;

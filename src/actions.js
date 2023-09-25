@@ -3,9 +3,9 @@ import { fetchData } from "./api";
 
 export const fetchMimun = createAsyncThunk(
   "mimun/fetch",
-  async (stationName, { rejectWithValue }) => {
+  async (sidoName, { rejectWithValue }) => {
     try {
-      const data = await fetchData(stationName);
+      const data = await fetchData(sidoName);
       return data;
     } catch (error) {
       return rejectWithValue(error.message);

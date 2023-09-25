@@ -7,7 +7,7 @@ function AllRegions() {
   const dispatch = useDispatch();
   const { data } = useSelector((state) => state.mimunSlice);
   useEffect(() => {
-    dispatch(fetchMimun("중구"));
+    dispatch(fetchMimun("서울"));
   }, [dispatch]);
   if (!data) {
     return null;
