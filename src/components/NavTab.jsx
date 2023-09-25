@@ -24,13 +24,14 @@ function NavTab() {
 }
 
 const Nav = styled.nav`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   width: 100%;
   height: 80px;
   background-color: #fff;
   box-shadow: 0 12px 20px #888;
+  z-index: 10;
 `;
 
 const Icon = styled.i`
