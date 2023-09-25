@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import StarPath from "../assets/images/i_star_line_b.png";
-import ActiveStarPath from "../assets/images/i_star_g.png";
 
 const colors = {
   // 미세먼지 상태에 따른 색상 코드 지정

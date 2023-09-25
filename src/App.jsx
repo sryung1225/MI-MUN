@@ -3,7 +3,7 @@ import GlobalStyle from "./styles/GlobalStyle.js";
 import AllRegions from "./routes/AllRegions";
 import MyRegions from "./routes/MyRegions";
 import FavoriteRegions from "./routes/FavoriteRegions.jsx";
-import FooterTab from "./components/FooterTab.jsx";
+import NavTab from "./components/NavTab.jsx";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Route path="/my" element={<MyRegions />} />
           <Route path="/favorite" element={<FavoriteRegions />} />
         </Routes>
-        <FooterTab />
+        <NavTab />
       </Router>
     </>
   );

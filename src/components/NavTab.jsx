@@ -7,9 +7,9 @@ import ActiveCloudPath from "../assets/images/i_cloud_g.png";
 import ActiveHomePath from "../assets/images/i_home_g.png";
 import ActiveStarPath from "../assets/images/i_star_g.png";
 
-function FooterTab() {
+function NavTab() {
   return (
-    <Footer>
+    <Nav>
       <Tab to="/">
         <CloudIcon></CloudIcon>모든 지역
       </Tab>
@@ -19,11 +19,11 @@ function FooterTab() {
       <Tab to="/favorite">
         <StarIcon></StarIcon>즐겨찾기
       </Tab>
-    </Footer>
+    </Nav>
   );
 }
 
-const Footer = styled.footer`
+const Nav = styled.nav`
   position: absolute;
   bottom: 0;
   display: flex;
@@ -91,4 +91,4 @@ const Tab = styled(NavLink)`
   }
 `;
 
-export default FooterTab;
+export default NavTab;
