@@ -3,7 +3,6 @@ import styled from "styled-components";
 import StarPath from "../assets/images/i_star_line_b.png";
 
 const colors = {
-  // 미세먼지 상태에 따른 색상 코드 지정
   so_good: "#4992ff",
   good: "#88e08d",
   soso: "#f3f489",
@@ -11,17 +10,35 @@ const colors = {
   so_bad: "#f75538",
 };
 
-function Card() {
+function Card({ data }) {
+  const pm10Value = data.pm10Value;
+  let conditionColor, conditionText;
+  if (pm10Value >= 0 && pm10Value <= 15) {
+    conditionColor = colors.so_good;
+    conditionText = "매우좋음";
+  } else if (pm10Value >= 16 && pm10Value <= 30) {
+    conditionColor = colors.good;
+    conditionText = "좋음";
+  } else if (pm10Value >= 31 && pm10Value <= 80) {
+    conditionColor = colors.soso;
+    conditionText = "보통";
+  } else if (pm10Value >= 81 && pm10Value <= 150) {
+    conditionColor = colors.bad;
+    conditionText = "나쁨";
+  } else {
+    conditionColor = colors.so_bad;
+    conditionText = "매우나쁨";
+  }
   return (
     <>
-      <CardWrapper>
+      <CardWrapper style={{ backgroundColor: conditionColor }}>
         <Location>
-          <Dong>구갈동</Dong>
-          <Si>용인시</Si>
+          <Dong>{data.stationName}</Dong>
+          <Si>{data.sidoName}</Si>
         </Location>
-        <Condition>좋음</Condition>
-        <Detail>미세먼지 수치: 100</Detail>
-        <Detail>(현재시간 기준)</Detail>
+        <Condition style={{ color: conditionColor }}>{conditionText}</Condition>
+        <Detail>미세먼지 수치: {data.pm10Value}</Detail>
+        <Detail>({data.dataTime} 기준)</Detail>
         <Star type="button"></Star>
       </CardWrapper>
     </>
@@ -40,7 +57,6 @@ const CardWrapper = styled.article`
   height: 250px;
   margin: 20px;
   padding: 20px;
-  background-color: ${colors.good}; // 변경 필요 - colors
   border-radius: 7px;
   box-shadow: 3px 3px 3px #aaa;
   @media only screen and (max-width: 1200px) {
@@ -72,7 +88,6 @@ const Condition = styled.span`
   margin: 20px auto 10px;
   background-color: #fff;
   border-radius: 10px;
-  color: ${colors.good}; // 변경 필요 - colors
   font-size: 50px;
   font-weight: bold;
 `;

@@ -9,11 +9,8 @@ function AllRegions() {
   useEffect(() => {
     dispatch(fetchMimun("서울"));
   }, [dispatch]);
-  if (!data) {
-    return null;
-  }
-  if (data.length === 0) {
-    return <div>No data available.</div>;
+  if (!data || data.length === 0) {
+    return <p>찾는 데이터가 없습니다.</p>;
   }
   return (
     <>
